@@ -1,6 +1,6 @@
 import * as React from 'react'
 // import styles from './styles.module.css'
-// import uuid from 'uuid';
+import { v4 } from 'uuid'
 
 interface Props {
   label?: string
@@ -19,7 +19,7 @@ export type SelectItem = {
 const SearchSelect = ({ component: Component, ...props }: Props) => {
   return (
     <div className={props.containerClassName}>
-      <label htmlFor={`${new Date().getMilliseconds()}`}>{props.label}</label>
+      <label htmlFor={`${v4()}`}>{props.label}</label>
       <div>
         <input type='text' />
       </div>
